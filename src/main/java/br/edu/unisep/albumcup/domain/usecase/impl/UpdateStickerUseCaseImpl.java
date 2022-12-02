@@ -14,7 +14,7 @@ public class UpdateStickerUseCaseImpl implements UpdateStickerUseCase {
     private final StickerRepository repository;
 
     public void execute(Integer id, Sticker sticker) {
-        if (repository.findById().isPresent()) {
+        if (repository.findById(id).isPresent()) {
             Sticker dto = repository.findById(id).get();
 
             if (dto.getPlayer() != null) {
